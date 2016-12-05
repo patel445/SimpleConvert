@@ -11,12 +11,32 @@
     <link rel="stylesheet" href="css/main.css"> </head>
 
 <body>
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> </button> <a class="navbar-brand page-scroll" href="index.html">Currency Converter</a> </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Currency Convert</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Language One</a></li>
+                  <li><a href="#">Language Two</a></li>
+                  <li><a href="#">Language Three</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
     <div class="inner-bg">
         <div class="container">
             <div class="row">
