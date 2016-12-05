@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="SimpleConvert">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css"> </head>
+
+<body>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> </button> <a class="navbar-brand page-scroll" href="index.html">Currency Converter</a> </div>
+        </div>
+    </nav>
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-box">
+                        <div class="form-header">
+                            <h3>Convert Your Currency</h3> </div>
+                        <div class="form-footer">
+                            <div data-ng-controller="ConvertCtrl">
+                                <form action="" method="POST" role="form">
+                                    <div class="form-group">
+                                        <p style="font-size: 16px; color: #333333;">Currency One:</p>
+                                        <select ng-model="fromType" class="form-control" required data-ng-change="Converter()" ng-options="k for (k, v) in rates track by v">
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p style="font-size: 16px; color: #333333; ">Currency Two:</p>
+                                        <select ng-model="toType" class="form-control" required data-ng-change="Converter()" ng-options="k for (k, v) in rates track by v">
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p style="font-size: 16px; color: #333333;">Original Value</p>
+                                        <input type="number" class="form-control" placeholder="Enter value" data-ng-model="fromValue" data-ng-change="Converter()">
+                                    </div>
+                                    <div class="form-group">
+                                        <p style="font-size: 16px; color: #333333;">Converted Value:</p>
+                                        <input type="text" class="form-control" placeholder="" data-ng-model="toValue" data-ng-change="Converter()"> </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
