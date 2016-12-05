@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Currency Converter</title>
+    <title id="title1">Currency Converter</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css"> </head>
-
+	<script>function translate(){return 0;}</script>
+	
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -20,17 +21,18 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Currency Convert</a>
+            <a class="navbar-brand" href="#" id="navbar">Currency Convert</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav navbar-right">
                <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="language">Languages<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Language One</a></li>
-                  <li><a href="#">Language Two</a></li>
-                  <li><a href="#">Language Three</a></li>
+                  <li><a href="javascript:convertToEnglish('English Conversion')" id="EnglishLang">English</a></li>
+                  <li><a href="javascript:convertToGerman('German Conversion!')" id="GermanLang">German</a></li>
+                  <li><a href="javascript:convertToFrench('French Conversion!')" id="FrenchLang">French</a></li>
+                  <li><a href="javascript:convertToItalian('Italilan Conversion!')" id="ItalianLang">Italian</a></li>
                 </ul>
               </li>
             </ul>
@@ -42,29 +44,29 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-box">
-                        <div class="form-header">
+                        <div class="form-header" id="formHeader">
                             <h3>Convert Your Currency</h3> </div>
                         <div class="form-footer">
                             <div data-ng-controller="ConvertCtrl">
                                 <form action="" method="POST" role="form">
                                     <div class="form-group">
-                                        <p style="font-size: 16px; color: #333333;">Currency One:</p>
+                                        <p style="font-size: 16px; color: #333333; " id="currency1">Currency One:</p>
                                         <select ng-model="fromType" class="form-control" required data-ng-change="Converter()" ng-options="k for (k, v) in rates track by v">
                                             <option value="">Select</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <p style="font-size: 16px; color: #333333; ">Currency Two:</p>
+                                        <p style="font-size: 16px; color: #333333; " id="currency2">Currency Two:</p>
                                         <select ng-model="toType" class="form-control" required data-ng-change="Converter()" ng-options="k for (k, v) in rates track by v">
                                             <option value="">Select</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <p style="font-size: 16px; color: #333333;">Original Value</p>
+                                        <p style="font-size: 16px; color: #333333;" id="originalValue">Original Value</p>
                                         <input type="number" class="form-control" placeholder="Enter value" data-ng-model="fromValue" data-ng-change="Converter()">
                                     </div>
                                     <div class="form-group">
-                                        <p style="font-size: 16px; color: #333333;">Converted Value:</p>
+                                        <p style="font-size: 16px; color: #333333;" id="convertedValue">Converted Value:</p>
                                         <input type="text" class="form-control" placeholder="" data-ng-model="toValue" data-ng-change="Converter()"> </div>
                                 </form>
                             </div>
@@ -80,5 +82,213 @@
     <script src="js/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
+
+<!-- Functions here -->
+
+<script>
+
+
+
+	function convertToEnglish(message)
+	{
+		var element = document.getElementById("title1");
+			element.innerHTML = "Currency Converter";
+			
+		var element1 = document.getElementById("navbar");
+			element1.innerHTML = "Currency Convert";
+			
+		var element2 = document.getElementById("language");
+			element2.innerHTML = "Language";
+			
+		var element3 = document.getElementById("EnglishLang");
+			element3.innerHTML = "English";
+			
+		var element4 = document.getElementById("GermanLang");
+			element4.innerHTML = "German";
+			
+		var element5 = document.getElementById("FrenchLang");
+			element5.innerHTML = "French";
+			
+		var element6 = document.getElementById("ItalianLang");
+			element6.innerHTML = "Italian";
+			
+		var element7 = document.getElementById("formHeader");
+			element7.innerHTML = "Convert Your Currency";
+		
+		var element8 = document.getElementById("currency1");
+			element8.innerHTML = "Currency One";
+			
+		var element9 = document.getElementById("currency2");
+			element9.innerHTML = "Currency Two";
+			
+		var element10 = document.getElementById("originalValue");
+			element10.innerHTML = "Original Value";
+			
+		var element11 = document.getElementById("convertedValue");
+			element11.innerHTML = "Converted Value";
+		
+	}
+	
+	function translateGerman(line)
+	{
+		//var language_translator;
+		var text = line;
+		var source = "en";
+		var target = "ge";
+		
+		return translate(text, source, target);
+	}
+	
+	
+	function convertToGerman(message)
+	{
+		convertToEnglish("Temp");
+
+		
+		var element = document.getElementById("title1");
+			element.innerHTML = "Währungsrechner";
+			
+		var element1 = document.getElementById("navbar");
+			element1.innerHTML = "Währungsrechner";
+			
+		var element2 = document.getElementById("language");
+			element2.innerHTML = "Sprachen";
+			
+		var element3 = document.getElementById("EnglishLang");
+			element3.innerHTML = "Englisch";
+			
+		var element4 = document.getElementById("GermanLang");
+			element4.innerHTML = "Deutsch";
+			
+		var element5 = document.getElementById("FrenchLang");
+			element5.innerHTML = "Französisch";
+			
+		var element6 = document.getElementById("ItalianLang");
+			element6.innerHTML = "Italienisch";
+			
+		var element7 = document.getElementById("formHeader");
+			element7.innerHTML = "Ihre Währung konvertieren";
+		
+		var element8 = document.getElementById("currency1");
+			element8.innerHTML = "Währung Ein";
+			
+		var element9 = document.getElementById("currency2");
+			element9.innerHTML = "Währung Zwei";
+			
+		var element10 = document.getElementById("originalValue");
+			element10.innerHTML = "Der erste Wertn";
+			
+		var element11 = document.getElementById("convertedValue");
+			element11.innerHTML = "Konvertierte Wert";
+		
+	}
+	
+	function translateFrench(line)
+	{
+		//var language_translator;
+		var text = line;
+		var source = "en";
+		var target = "fr";
+		
+		return translate(text, source, target);
+	}
+
+	
+	function convertToFrench(message)
+	{
+		convertToEnglish("Temp");
+		
+		var element = document.getElementById("title1");
+			element.innerHTML = "Convertisseur de devises";
+			
+		var element1 = document.getElementById("navbar");
+			element1.innerHTML = "Convertisseur de devises";
+			
+		var element2 = document.getElementById("language");
+			element2.innerHTML = "Langue";
+			
+		var element3 = document.getElementById("EnglishLang");
+			element3.innerHTML = "Anglais";;
+			
+		var element4 = document.getElementById("GermanLang");
+			element4.innerHTML = "Allemand";
+			
+		var element5 = document.getElementById("FrenchLang");
+			element5.innerHTML = "Français";
+			
+		var element6 = document.getElementById("ItalianLang");
+			element6.innerHTML = "Italien";
+			
+		var element7 = document.getElementById("formHeader");
+			element7.innerHTML = "Convertir votre devise";
+		
+		var element8 = document.getElementById("currency1");
+			element8.innerHTML = "Une devise";
+			
+		var element9 = document.getElementById("currency2");
+			element9.innerHTML = "Devise deux";
+			
+		var element10 = document.getElementById("originalValue");
+			element10.innerHTML = "Valeur initiale";
+			
+		var element11 = document.getElementById("convertedValue");
+			element11.innerHTML = "Valeur convertie";
+	}
+	
+	function translateItalian(line)
+	{
+		//var language_translator;
+		var text = line;
+		var source = "en";
+		var target = "It";
+		
+		return translate(text, source, target);
+	}
+	
+	function convertToItalian(message)
+	{
+		convertToEnglish("Temp");
+		
+		var element = document.getElementById("title1");
+			element.innerHTML = "Convertitore valuta";
+			
+		var element1 = document.getElementById("navbar");
+			element1.innerHTML = "Conversione valuta";
+					
+		var element2 = document.getElementById("language");
+			element2.innerHTML = "Lingua";
+			
+		var element3 = document.getElementById("EnglishLang");
+			element3.innerHTML = "Inglese";
+			
+		var element4 = document.getElementById("GermanLang");
+			element4.innerHTML = "Tedesco";
+			
+		var element5 = document.getElementById("FrenchLang");
+			element5.innerHTML = "Francese";
+		
+		var element6 = document.getElementById("ItalianLang");
+			element6.innerHTML = "Italiano";
+			
+		var element7 = document.getElementById("formHeader");
+			element7.innerHTML = "Converti la valuta";
+			
+		var element8 = document.getElementById("currency1");
+			element8.innerHTML = "La valuta unica";
+			
+		var element9 = document.getElementById("currency2");
+			element9.innerHTML = "Valuta due";
+			
+		var element10 = document.getElementById("originalValue");
+			element10.innerHTML = "Valore originale";
+			
+		var element11 = document.getElementById("convertedValue");
+			element11.innerHTML = "Valore convertito";
+
+	}
+	
+</script>
+
+
 
 </html>
