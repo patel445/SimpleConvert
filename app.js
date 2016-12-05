@@ -22,12 +22,12 @@ app.use(express.static(__dirname + '/public'));
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
-/*var watson = require('watson-developer-cloud');
+var watson = require('watson-developer-cloud');
 var language_translator = watson.language_translator({
   username: 'bfc35474-8475-49aa-a313-3b35bf72d04c',
  password: 'YMzt74PAxWRK',
   version: 'v2'
-});*/
+});
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
